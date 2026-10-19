@@ -1,0 +1,28 @@
+[
+  {
+    "id": "42497db7-a7b0-4366-ad49-a58dcb3e2fd2",
+    "name": "test",
+    "predictions": {
+      "senate-mi": 9.1,
+      "senate-tx": -5.3,
+      "senate-ia": -2.9,
+      "governor-wi": 1.9,
+      "governor-oh": 1.9,
+      "governor-ga": -0.7
+    },
+    "submittedAt": "2026-10-19T02:05:04.966Z"
+  },
+  {
+    "id": "1ee3571e-926b-491a-8b02-ef5973fbb885",
+    "name": "test2",
+    "predictions": {
+      "senate-mi": 17.9,
+      "senate-tx": -12.1,
+      "senate-ia": -9.3,
+      "governor-wi": -6.3,
+      "governor-oh": -4.7,
+      "governor-ga": 11.6
+    },
+    "submittedAt": "2026-10-19T02:05:22.079Z"
+  }
+]

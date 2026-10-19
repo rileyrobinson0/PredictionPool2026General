@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f2" />
+    <meta name="description" content="Submit your predictions for six 2026 U.S. election races and compare with the community." />
+    <title>Hacks' Prediction Pool 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Hacks' Prediction Pool 2026 home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-name">Hacks' Prediction Pool <span class="brand-light">2026</span></span>
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="/" data-nav="form">Make predictions</a>
+          <a class="nav-link results-nav" href="/results" data-nav="results">Community results <span class="nav-count" id="nav-count">—</span></a>
+        </nav>
+        <span class="cycle-tag"><span class="live-dot"></span> 2026 ELECTIONS</span>
+      </header>
+
+      <main>
+        <section class="form-layout" id="form-view" aria-labelledby="form-title">
+          <div class="section-heading">
+            <div><p class="eyebrow">YOUR BALLOT</p><h2 id="form-title">Where do you think<br class="mobile-break" /> each race will land?</h2></div>
+          </div>
+          <div class="instructions"><span class="info-icon" aria-hidden="true">i</span><p>Enter the <strong>Democratic margin</strong> in percentage points. Positive numbers mean the Democrat wins; negative numbers mean the Republican wins. Example: <strong>+3.5</strong> means a 3.5-point Democratic win.</p></div>
+          <form id="prediction-form">
+            <label class="name-field" for="name"><span class="field-label">YOUR NAME <span class="required">*</span></span><input id="name" name="name" type="text" maxlength="60" autocomplete="name" placeholder="e.g. Alex Morgan" required /><span class="public-note">Your name and predictions will be visible to everyone.</span></label>
+            <div class="race-grid" id="race-grid" aria-live="polite"></div>
+            <div class="form-footer"><p><span class="required">*</span> All six margins are required. You can use decimals.</p><button class="submit-button" type="submit"><span>Submit predictions</span><span class="button-arrow" aria-hidden="true">↗</span></button></div>
+            <p class="form-message" id="form-message" role="alert" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="results-view hidden" id="results-view" aria-labelledby="results-title">
+          <div class="results-heading">
+            <div><p class="eyebrow"><span class="eyebrow-line"></span> THE CROWD HAS SPOKEN</p><h1 id="results-title">The room's<br /><span>read on the races.</span></h1><p class="results-intro">Every prediction, all in one place. These are calls—not results.</p></div>
+            <div class="results-stat"><span class="stat-icon" aria-hidden="true">✳</span><strong id="total-count">0</strong><span>PREDICTIONS<br />SUBMITTED</span></div>
+          </div>
+          <div class="results-toolbar"><div><h2>Community predictions</h2><p>Margins shown as Democratic lead (+) or Republican lead (−).</p></div><a class="outline-button" href="/">＋ &nbsp;Add your prediction</a></div>
+          <div class="results-list" id="results-list"></div>
+        </section>
+      </main>
+
+      <footer class="footer"><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-name">Hacks' Prediction Pool <span class="brand-light">2026</span></span></a><p>Just for fun. Not a forecast, poll, or endorsement.</p><span class="footer-cycle">2026 · SIX RACES · ONE BIG QUESTION</span></footer>
+    </div>
+    <template id="race-card-template">
+      <article class="race-card">
+        <div class="race-card-top"><span class="race-office"></span></div>
+        <div class="race-name-row"><h3 class="race-state"></h3><span class="state-star" aria-hidden="true">✳</span></div>
+        <div class="margin-control">
+          <div class="margin-value-row"><output class="margin-value">0.0 pts · tied</output></div>
+          <input class="margin-input" type="range" min="-20" max="20" step="0.1" value="0" />
+          <div class="margin-scale"><span>R +20</span><span class="scale-track"><i></i></span><span>D +20</span></div>
+          <label class="sr-only"></label>
+          <div class="margin-number-wrap"><input class="margin-number" type="number" min="-20" max="20" step="0.1" value="0" inputmode="decimal" required /><span>pts</span></div>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

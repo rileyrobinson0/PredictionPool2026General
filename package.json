@@ -1,0 +1,12 @@
+{
+  "name": "prediction-pool",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A public prediction pool for the 2026 U.S. election cycle.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
